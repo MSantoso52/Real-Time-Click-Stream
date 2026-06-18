@@ -81,4 +81,7 @@ Need to be installed on your system (mine: *cachyos*):
   sudo pacman -S tmux
   ``` 
 
-## Project Flow
+## *Project Flow*
+
+## *Screenshot*
+![Grafana]()
