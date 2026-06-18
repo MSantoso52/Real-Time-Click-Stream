@@ -39,5 +39,46 @@ A self‑contained demo (Docker‑Compose) that ingests click events from Kafka 
   - Fraud detection dashboards
 
 ## Prerequisite
+Need to be installed on your system:
+- Docker & docker-compose installed for docker build
+  ```bash
+  sudo pacman -S docker docker-compose buildx
+
+  docker --version
+  Docker version 29.5.2, build 79eb04c7d8
+
+  docker-compose --version
+  Docker Compose version 5.1.4
+  ```
+- Neovim for code editor and enhance with lazyvim
+  ```bash
+  sudo pacman -S neovim ripgrep fd git curl
+  
+  git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+  nvim --version
+  NVIM v0.12.3
+  Build type: RelWithDebInfo
+  LuaJIT 2.1.1780076327
+  Run "nvim -V1 -v" for more info  
+  ```
+- git for versioning control
+  ```bash
+  sudo pacman -S git
+  
+  git --version
+  git version 2.54.0
+  ```
+- Web browser (Brave)
+  ```bash
+  yay -S brave-bin
+
+  brave --version
+  Brave Browser 149.1.91.172
+  ```
+- tmux for terminal multiplexer - to make easy workspace because all done terminal
+  ```bash
+  sudo pacman -S tmux
+  ``` 
 
 ## Project Flow
