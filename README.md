@@ -102,6 +102,29 @@ Need to be installed on your system (mine: *cachyos*):
   # Add clickhouse to docker network
   docker metwork connect realtime-net clickhouse-server  
    ```
+  - Create python code to simulate transaction as streaming and publish into kafka publisher
+  - Create pyton code to consume data already publish by kafka
+  - Setup Grafana for real-time monitoring
+    - Open Grafana: http://localhost:3000 (login: admin / admin).
+    - Add ClickHouse datasource
+      - Name: clickhouse_ds
+      - URL: http://clickhouse:8123
+      - Database: sales
+      - User: <user>
+      - Password: <password>
+  - Create a Dashboard
+    - Add a Time series panel.
+    - Query (SQL) for real-time transaction monitoring:
+      ```sql
+      SELECT
+        toStartOfSecond(toDateTime64(timestamp, 0)) AS time,
+        sum(qty_sale) AS sales_qty,
+        sum(item_price * qty_sale) AS sales_amount
+      FROM sales_data
+      WHERE timestamp >= (now() - toIntervalMinute(1))
+      GROUP BY time
+      ORDER BY time AS
+      ```
 
 ## *Screenshot*
 ![Grafana](Real-time_streaming.png)
