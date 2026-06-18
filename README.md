@@ -86,9 +86,9 @@ Need to be installed on your system (mine: *cachyos*):
   ```bash
   # checking active container
    CONTAINER ID   IMAGE                                 COMMAND                  CREATED       STATUS                  PORTS                                                                                                NAMES
-  dc5c96f41fdc   clickhouse/clickhouse-server:latest   "/entrypoint.sh"         2 days ago    Up 2 days               0.0.0.0:8123->8123/tcp, [::]:8123->8123/tcp, 9009/tcp, 0.0.0.0:9002->9000/tcp, [::]:9002->9000/tcp   clickhouse-server
-  8e4bdc2aef82   confluentinc/cp-kafka:7.6.1           "/etc/confluent/dock…"   3 days ago    Up 2 days (healthy)     9092/tcp, 0.0.0.0:29092->29092/tcp, [::]:29092->29092/tcp                                            kafka
-  fb7ec05260d3   grafana/grafana                       "/run.sh"                3 weeks ago   Up 2 days               0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                                          observability-grafana-1
+    dc5c96f41fdc   clickhouse/clickhouse-server:latest   "/entrypoint.sh"         2 days ago    Up 2 days               0.0.0.0:8123->8123/tcp, [::]:8123->8123/tcp, 9009/tcp, 0.0.0.0:9002->9000/tcp, [::]:9002->9000/tcp   clickhouse-server
+    8e4bdc2aef82   confluentinc/cp-kafka:7.6.1           "/etc/confluent/dock…"   3 days ago    Up 2 days (healthy)     9092/tcp, 0.0.0.0:29092->29092/tcp, [::]:29092->29092/tcp                                            kafka
+    fb7ec05260d3   grafana/grafana                       "/run.sh"                3 weeks ago   Up 2 days               0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                                          observability-grafana-1
 
   # create docker network
   docker network create realtime-net
