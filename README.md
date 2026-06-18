@@ -132,6 +132,42 @@ Need to be installed on your system (mine: *cachyos*):
     ```
   - Create pyton code to consume data already publish by kafka
     ```python
+    ...
+    # Kafka configuration
+    KAFKA_BROKER = 'localhost:29092'
+    KAFKA_TOPIC = 'sales_data'
+    KAFKA_GROUP = 'sales_consumer_group'
+
+    # Clickhouse configuration
+    CLICKHOUSE_HOST = 'localhost'
+    CLICKHOUSE_PORT = 9002
+    CLICKHOUSE_DATABASE = 'sales'
+    CLICKHOUSE_TABLE = 'sales_data'
+    CLICKHOUSE_USER = 'consumer'
+    CLICKHOUSE_PASSWORD = 'clickhouse'
+    ...
+
+     # Ensure infrastructure exist
+    ensure_topic_exists()
+    ensure_clickhouse_table()
+
+    # Configure Consumer
+    consumer_config = {
+        'bootstrap.servers': KAFKA_BROKER,
+        'group.id': KAFKA_GROUP,
+        'auto.offset.reset': 'earliest',
+        'enable.auto.commit': False
+    }
+
+    ...
+
+    # Insert batch when full
+    if len(batch) >= batch_size:
+        ch_client.execute(insert_query, batch)
+        consumer.commit(msg)
+        batch = []
+    ...
+
     ```
   - Setup Grafana for real-time monitoring
     - Open Grafana: http://localhost:3000 (login: admin / admin).
