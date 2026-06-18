@@ -26,14 +26,6 @@ A self‑contained demo (Docker‑Compose) that ingests click events from Kafka 
   - Gives product, marketing, and operations teams a single source of truth for user activity.
 
 ## *Business Leverage*
-- Demonstrates strong data engineering skills across the full pipeline:
-  - Streaming ingestion
-  - Schema design
-  - Data modeling
-  - Materialized views
-  - Performance tuning
-  - Dashboarding
-  - Monitoring
 - ClickHouse provides major leverage because it can:
   - Ingest large volumes of data quickly
   - Store events efficiently
@@ -45,9 +37,6 @@ A self‑contained demo (Docker‑Compose) that ingests click events from Kafka 
   - Log analytics
   - Product analytics
   - Fraud detection dashboards
-- The project is highly portfolio-friendly because it shows both:
-  - Technical depth
-  - Clear business value
 
 ## Prerequisite
 
